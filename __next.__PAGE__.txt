@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[6513,["974","static/chunks/app/page-81f4ac0aad4d1cd8.js"],"SceneLoader"]
+3:I[26,[],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"buildId":"0MZpigO5VpUk9sf9zbaw1","rsc":["$","$1","c",{"children":[["$","main",null,{"children":["$","$L2",null,{}]}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+5:null
