@@ -7,9 +7,8 @@ const _geist = Geist({ subsets: ['latin'] })
 const _geistMono = Geist_Mono({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: '3D Office Table',
-  description: 'Interactive 3D office desk with cable management hole built with React Three Fiber',
-  generator: 'v0.app',
+  title: 'Office Table Studio — 3D Configurator',
+  description: 'Configure your office table in real-time 3D: dimensions, leg styles, finishes and add-ons with live pricing in MAD. Built with React Three Fiber.',
 }
 
 export default function RootLayout({

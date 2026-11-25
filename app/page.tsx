@@ -1,9 +1,9 @@
-import { SceneLoader } from "@/components/scene-loader"
+import { Configurator } from "@/components/configurator"
 
 export default function Home() {
   return (
     <main>
-      <SceneLoader />
+      <Configurator />
     </main>
   )
 }

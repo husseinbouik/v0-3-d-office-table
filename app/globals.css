@@ -92,3 +92,403 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* ------------------------------------------------------------------ */
+/*  Office Table Studio — configurator UI                              */
+/* ------------------------------------------------------------------ */
+
+.cfg-root {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: #f3ede4;
+  font-family: ui-sans-system, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: #26221c;
+}
+
+.cfg-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #5c3a1e;
+  font-size: 14px;
+}
+
+.cfg-spinner {
+  width: 32px;
+  height: 32px;
+  border: 4px solid #5c3a1e;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: cfg-spin 1s linear infinite;
+}
+
+@keyframes cfg-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.cfg-title {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 20;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(38, 34, 28, 0.08);
+  border-radius: 14px;
+  padding: 10px 16px 11px;
+  box-shadow: 0 8px 24px rgba(60, 45, 25, 0.10);
+  pointer-events: none;
+}
+
+.cfg-title h1 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+
+.cfg-title p {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: #7a7264;
+}
+
+.cfg-hint {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  z-index: 20;
+  font-size: 12px;
+  color: #7a7264;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 999px;
+  padding: 5px 12px;
+  pointer-events: none;
+}
+
+.cfg-panel {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 20;
+  width: 318px;
+  max-height: calc(100% - 32px);
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(38, 34, 28, 0.08);
+  border-radius: 18px;
+  box-shadow: 0 16px 40px rgba(60, 45, 25, 0.14);
+  padding: 6px 18px 14px;
+  scrollbar-width: thin;
+}
+
+.cfg-section {
+  padding: 12px 0 13px;
+  border-bottom: 1px solid rgba(38, 34, 28, 0.08);
+}
+
+.cfg-section:last-child {
+  border-bottom: none;
+}
+
+.cfg-section h2 {
+  margin: 0 0 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8a8172;
+}
+
+.cfg-slider-row {
+  margin-bottom: 10px;
+}
+
+.cfg-slider-row:last-of-type {
+  margin-bottom: 6px;
+}
+
+.cfg-slider-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 4px;
+}
+
+.cfg-slider-head label {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.cfg-slider-value {
+  font-size: 12px;
+  font-weight: 600;
+  color: #2e6bff;
+  font-variant-numeric: tabular-nums;
+}
+
+.cfg-panel input[type="range"] {
+  width: 100%;
+  accent-color: #2e6bff;
+  height: 22px;
+  cursor: pointer;
+}
+
+.cfg-readout {
+  margin: 2px 0 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: #7a7264;
+  font-variant-numeric: tabular-nums;
+}
+
+.cfg-segments {
+  display: flex;
+  background: rgba(38, 34, 28, 0.06);
+  border-radius: 10px;
+  padding: 3px;
+  gap: 3px;
+}
+
+.cfg-seg {
+  flex: 1;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  padding: 7px 4px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #5d564a;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, box-shadow 0.15s;
+  white-space: nowrap;
+}
+
+.cfg-seg:hover {
+  color: #26221c;
+}
+
+.cfg-seg.active {
+  background: #fff;
+  color: #26221c;
+  box-shadow: 0 2px 8px rgba(60, 45, 25, 0.14);
+}
+
+.cfg-swatches {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.cfg-swatch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1.5px solid rgba(38, 34, 28, 0.10);
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 11px;
+  padding: 7px 9px;
+  cursor: pointer;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.cfg-swatch:hover {
+  border-color: rgba(38, 34, 28, 0.3);
+}
+
+.cfg-swatch.active {
+  border-color: #2e6bff;
+  box-shadow: 0 0 0 1px #2e6bff;
+}
+
+.cfg-swatch-dot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid rgba(38, 34, 28, 0.15);
+  flex-shrink: 0;
+}
+
+.cfg-swatch-name {
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.cfg-addon-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.cfg-addon-row:last-child {
+  margin-bottom: 0;
+}
+
+.cfg-segments.small {
+  flex: 0 0 auto;
+}
+
+.cfg-segments.small .cfg-seg {
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+.cfg-switch {
+  width: 44px;
+  height: 24px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(38, 34, 28, 0.18);
+  position: relative;
+  cursor: pointer;
+  transition: background 0.18s;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.cfg-switch.on {
+  background: #2e6bff;
+}
+
+.cfg-switch-knob {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  transition: left 0.18s;
+}
+
+.cfg-switch.on .cfg-switch-knob {
+  left: 23px;
+}
+
+.cfg-summary {
+  background: rgba(46, 107, 255, 0.05);
+  margin: 4px -18px -14px;
+  padding: 14px 18px 14px;
+  border-radius: 0 0 18px 18px;
+}
+
+.cfg-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 10px;
+}
+
+.cfg-price-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8a8172;
+}
+
+.cfg-price {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #1c4fd6;
+  font-variant-numeric: tabular-nums;
+}
+
+.cfg-parts {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cfg-parts li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 5px 0;
+  border-top: 1px dashed rgba(38, 34, 28, 0.10);
+}
+
+.cfg-parts li:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.cfg-part-name {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.cfg-part-detail {
+  display: block;
+  font-size: 11.5px;
+  color: #7a7264;
+}
+
+.cfg-part-price {
+  font-size: 12.5px;
+  font-weight: 700;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.cfg-demo-note {
+  margin: 10px 0 0;
+  font-size: 11px;
+  color: #8a8172;
+}
+
+/* ------------------------------ mobile ------------------------------ */
+
+@media (max-width: 640px) {
+  .cfg-title {
+    top: 10px;
+    left: 10px;
+    padding: 8px 12px 9px;
+  }
+
+  .cfg-title h1 {
+    font-size: 15px;
+  }
+
+  .cfg-hint {
+    display: none;
+  }
+
+  .cfg-panel {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+    max-height: 47%;
+    border-radius: 18px 18px 0 0;
+    padding: 2px 16px 10px;
+  }
+
+  .cfg-summary {
+    margin: 4px -16px -10px;
+    padding: 12px 16px 12px;
+    border-radius: 0;
+  }
+}
