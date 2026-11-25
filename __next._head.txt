@@ -1,5 +1,6 @@
 1:"$Sreact.fragment"
-2:I[26,[],"ViewportBoundary"]
-3:I[26,[],"MetadataBoundary"]
+2:I[484,[],"ViewportBoundary"]
+3:I[484,[],"MetadataBoundary"]
 4:"$Sreact.suspense"
-0:{"buildId":"0MZpigO5VpUk9sf9zbaw1","rsc":["$","$1","h",{"children":[null,["$","$L2",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","div",null,{"hidden":true,"children":["$","$L3",null,{"children":["$","$4",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"3D Office Table"}],["$","meta","1",{"name":"description","content":"Interactive 3D office desk with cable management hole built with React Three Fiber"}],["$","meta","2",{"name":"generator","content":"v0.app"}]]}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"loading":null,"isPartial":false}
+5:I[6869,[],"IconMark"]
+0:{"buildId":"ONicMd7NtXxVRHVMWrCCB","rsc":["$","$1","h",{"children":[null,["$","$L2",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","div",null,{"hidden":true,"children":["$","$L3",null,{"children":["$","$4",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Office Table Studio — 3D Configurator"}],["$","meta","1",{"name":"description","content":"Configure your office table in real-time 3D: dimensions, leg styles, finishes and add-ons with live pricing in MAD. Built with React Three Fiber."}],["$","link","2",{"rel":"icon","href":"/v0-3-d-office-table/icon.png?b8ab11322bf7ee97","type":"image/png","sizes":"64x64"}],["$","$L5","3",{}]]}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"loading":null,"isPartial":false}
